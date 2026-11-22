@@ -1,0 +1,19 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "N"]
+# X for a feature matrix is the scikit-learn naming convention.
+ignore = ["N803", "N806"]
+
+[tool.mypy]
+files = ["forecasting"]
+ignore_missing_imports = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+warn_return_any = true
